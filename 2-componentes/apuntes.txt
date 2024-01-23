@@ -1,0 +1,4 @@
+-->Componentes, option api, composition api
+	Cuando escribimos componentes en vue, estamos creando nuestras propias etiquetas. Cuando estructuramos el proyecto, necesitamos atomizarlo, pensarlo en componentes para ser reutilizables, indice de reusabilidad bastante alto. biblioteca de componentes y recursos para trabajar de manera rápida y eficiente. Buenas prácticas y experiencia ayudan a afinar para realizar las estructuraciones.
+ 
+-->Importando componentes

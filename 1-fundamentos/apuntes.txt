@@ -1,0 +1,83 @@
+instalacion, fundamentos
+
+--> instalacion
+ 	yarn o npm
+	instalar el cliente de vue, apoyarnos en nuestro gestor de dependencias.
+	terminal con permisos de administrador para instalar de manera global (para mac incluir sudo)
+	vue --version para saber la versión
+	IDE --> entorno de desarrollo, para poder escribir el código de nuestras aplicaciones
+	extesiones -> vue.js devtools, añadido para poder depurar nuestro código, nos ofrece el estado de los componentes, estados globales, y cambian los dif elementos. vue-snippets, trozos de código que nos ayudan a escribir más rápido. Volar, extensión oficial para dar soporte.
+
+--> que es y como funciona
+	framework, libreria de trabajo que nos permite la realizacion de interfaces reactivas
+	framework -> conjunto de herramientas por encima de js  ts que nos van a incluir una serie de funcionalidades y patriones para poder ejecutar nuestro codigo de nun manera mas facil. Desarrollo de frontales y los construye de manera reactiva, significa que a la hora de ejecutar nuestras construcciones estas van a ir actualizandose sin la necesidad de actualizar las peticiones. Van a ir montando y desmontando sin necesitar de refrescar el navegador o peticiones de segundo plano. de esta forma toda la composicion visual va a quedar muy limpia y nos permite ejecutar PWAs o SPAs. Toda la informacion que vayamos construyendo en él no necesita de peticiones ajax o refrescar el navegador.
+	arquitectura de vue -> patrón MVVM modelo-vista-vista-modelo, mediante el cual nosotros construimos componentes, cada uno contiene su logica y su renderizado. Cada uno de estos modelos o componentes va a ser reactivo. Funciona con un DOM virtual, cuando trabajamos el navegador, el arbol de etiquetas del navegador se contruye con el DOM, informacion o arbol de etiquetas que se muestra. Vue realiza las composiciones para nosotros. Cada componente escucha cuando ocurren las modificaciones. de forma interna vue contruye un getter y setter para cada uno de esos datos, se los notifica, vue detecta esos cambios, escuchándolos y luego a traves de una funcion de renderizado, modifica el virtual DOM y luego lo actualiza en el DOM.
+
+--> creando vue
+	podemos trabajar a traves de un cdn o a traves de un cliente
+	cdn -> proyectos pequeños, no es el formato que deberiamos estar usando cuando realizamos una constr solida
+	cliente -> los clientes permiten gestionar la estructura de nuestro codigo de una manera más solida. Vite, cliente de Vue
+
+--> usando vue cli
+	babel -> es el transpilador que traduce codigo a un js interpretable por nuestro navegador transpilado a web assembly o js.
+	typescript -> mas restrictivo que js
+	pwa -> es una constr nativa web que está enfocada a visualizarse a una apl movil
+	linter -> formateador que ayudan a hacer analisis estatico de nuestro codigo y hacerlo de una manera mas limpia y detectan potenciales errores en nuestro codigo
+	unit testing -> 
+	e2e testing ->
+	class-style o como elementos funcionales ->
+	config del proyecto en el package.json o el archivos -> mejor archivos
+
+--> estructura de archivos
+	vue config -> archivo de configuracion de vue, posibles pluggings o modificaciones del comportamiento de vue. uso de ts, acceso a servidores y seguridad, etc. siempre va a ser un js aunque trabajemos en ts, por ser un archivo de config
+	tsconfig.json -> archivo de config de ts que explica todas las opciones para el compile
+	readme -> archivo que muestra la vis de nuestro proyecto, comandos por defecto de vue
+	package.json -> cuando trabajamos con npm, paquete de codigo. archivo de config de nuestro paquete y dependencias. diccionario que define nuestro paquete. declara las dependencias de nuestro proyecto.
+	pacage.lock -> descripcion mas exhaustiva  nos ayuda a mantener el control de versiones. ayudarnos a que si hay cambios en alguna version y que afectan al codigo, ayuda a recomponer el codigo y que vuelva a funcionar
+	babel -> marca los presets para nuestro transpilador
+	gitignore -> decide que archivos se suben y cuales no al repo
+	eslintrc.js -> confg del linter, extensiones, reglas de funcionamiento, etc
+	browserslistrc -> descripcion de los navegadores a los cuales da soporte. a traves de las reglas de brower.. a cuales da soporte
+	node_modules -> donde se instalan todas las dependencias
+	public -> carpeta publica del proyecto, directorio efectivo que generamos. elementos publicos dentro de nuestro sistema. index.html el punto de entrada a nuestra app web. y favico que aparece en la pestaña del navegador.
+	src -> carpeta efectiva de trabajo, la carpeta de los recursos, codificamos nuestros componentes. 
+	shims-vue.d.ts -> declaracion de tipos y modulos necesario para que ts funcione. ts es de tipado obligatorio y no flexible como js, y podemos declarar ciertos modulos con esto
+	main.ts -> archivo encargado de momntar en el index el componente ppal de la app
+	app.vue -> componente ppal de la aplicación
+	components -> carpeta de componentes
+	assets -> directorio donde ubicamos resto de elementos que need nuestros componentes como las imagenes
+
+--> flujo y punto de entrada
+	index.html <- main.ts -> app.vue
+	index -> punto de entrada donde se va a cargar todo nuestro proyecto. tiene unos meta de html5. etiqueta noscript en el caso que no permita js en su navegador. etiqueta div con un id #app. vue va a generar unos archivos estaticos de js ya compilados donde tendrá toda la funcionalidad de nuestra app y los irá inyectando debajo.
+	main.ts -> crea una app de vue y la monta en el div con id #app. monta el componente ppal de vue. que es el componente app.vue
+	app.vue -> componente ppal o incial de nuestro proyecto y se encarga de montar y desmontar los dif componentes en la pagina, segun lo que necesitemos.
+	componente.ts -> es el que ya vemos en el navegador
+
+--> estructura basica de un componente
+	archivo .vue stringCamelCase
+	etiquetas -> 
+	template -> codigo html, la semántica, ya no necesita un contenedor que englobe todo
+	script -> logica de funcionamiento y nuestros datos, atributo lang ts para indicar que el codigo dentro es ts
+	styles -> etiqueta para los estilos, CSS
+	estas etiquetas las suelen tener patrones de arquitectura MVVM. atributo scoped, evitamos colisiones con otros componentes
+	
+
+	
+
+
+	
+
+
+
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+
